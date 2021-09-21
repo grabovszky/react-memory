@@ -21,33 +21,40 @@
 
 A simple, yet elegant memory card game made with ReactJS.
 
-## Memory game rules
+### Memory game rules
 
 The board contains an even number of cards, every card has a pair. Initially all cards are hidden. The player has to find all the matching cards. If the player clicks on a card, it is flipped, if he clicks on a new card, it will be flipped too. If the two cards match, they will stay flipped, if they don't match, both cards will be flipped back to be hidden. The goal is to try and match all the cards, in the least possible tries.
 
 ### Built With
 
-//TODO
+- [React](https://reactjs.org)
+- [Create React App](https://github.com/facebook/create-react-app)
 
 ## Getting Started
 
-//TODO
+To install or use the game first install the prerequisites, then follow the install instructions below.
 
 ### Prerequisites
 
-//TODO
+- [Node.js 16.9.1 or higher](https://nodejs.org/en/)
 
 ### Installation
 
-//TODO
+```bash
+git clone https://github.com/grabovszky/react-memory.git
+cd react-memory
+npm i
+```
 
 ## Usage
 
-//TODO
+Run `npm start` to start the app in developemnt mode.
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### Scripts
 
-//TODO
+- `npm start` Runs the app in the development mode.
+- `npm run build` Builds the app for production to the `build` folder.
 
 ## License
 
@@ -74,4 +81,6 @@ Kristóf Gábor - [gaborkristof.com](https://www.gaborkristof.com)
 
 ## Acknowledgements
 
-//TODO
+- [Facebook](https://github.com/facebook) dev team for:
+  - [React](https://github.com/facebook/react) (Licensed under [MIT](https://github.com/facebook/react/blob/main/LICENSE))
+  - [Create React App](https://github.com/facebook/create-react-app) (Licensed under [MIT](https://github.com/facebook/create-react-app/blob/main/LICENSE))
