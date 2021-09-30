@@ -63,7 +63,24 @@ const Game = (props) => {
    * Checks if the game is finished, and if it is show the winnig screen
    */
   useEffect(() => {
-    // finished game
+    // checks if no card remained unflipped and we need to check for the length so it doesn't trigger on an empty game
+    if (!cards.some((card) => !card.flipped) && cards.length > 0) {
+      // the score is calculated by the steps taken to finish the game
+      const score = Math.floor(flippedCount / 2);
+
+      // if the current score is smaller than the all time high score or there is no high score, save a new high score to a local file
+      if (score < highScore || highScore === 0) {
+        setHighScore(score);
+        const json = JSON.stringify(score);
+        localStorage.setItem('memorygamehighscore', json);
+      }
+
+      props.setscore(score);
+      setTimeout(() => {
+        // show the winning screen to the user
+        props.showwinningscreen(true);
+      }, 500);
+    }
   }, [props, flippedCount, cards, highScore]);
 
   /**
@@ -72,7 +89,25 @@ const Game = (props) => {
    * Checks if two cards have been flipped, and if yes determines if it is a pair or not
    */
   if (flippedIndexes.length === 2) {
-    // mathced
+    // mathc the cards based on their identifing name
+    if (cards[flippedIndexes[0]].img === cards[flippedIndexes[1]].img) {
+      // if the cards match copy the cards to a new array, this will prevent the re flipping of the matched cards
+      const newGame = [...cards];
+
+      // stay flipped
+      newGame[flippedIndexes[0]].flipped = true;
+      newGame[flippedIndexes[1]].flipped = true;
+      setCards(newGame);
+
+      const newIndexes = [...flippedIndexes];
+      newIndexes.push(false);
+      setFlippedIndexes(newIndexes);
+    } else {
+      // if the cards didn't match  we trigger the re flipping of the cards
+      const newIndexes = [...flippedIndexes];
+      newIndexes.push(true);
+      setFlippedIndexes(newIndexes);
+    }
   }
 
   return (

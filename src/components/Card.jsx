@@ -23,14 +23,48 @@ const Card = (props) => {
    * Manages the card flip reset
    */
   useEffect(() => {
-    // reset flip
+    if (
+      props.flippedIndexes[2] === true &&
+      props.flippedIndexes.indexOf(props.id) > -1
+    ) {
+      // two cards are flipped and they don't match flip them back after 1s
+      props.setFlippedIndexes([]);
+      setTimeout(() => {
+        setFlipped(!flipped);
+      }, 1000);
+    } else if (props.flippedIndexes[2] === false && props.id === 0) {
+      props.setFlippedIndexes([]);
+    }
   }, [props, flipped]);
 
   /**
    * Checks if the card can be flipped or not and act accordingly
    */
   const onCardClick = () => {
-    // can click
+    // checks if the card is not yet
+    if (!props.cards[props.id].flipped) {
+      if (props.flippedCount % 2 === 0) {
+        // an opening flip
+        flip();
+      } else if (
+        props.flippedCount % 2 === 1 &&
+        props.flippedIndexes.indexOf(props.id) < 0
+      ) {
+        // a second flip and it is not the first flipped card
+        flip();
+      }
+    }
+  };
+
+  /**
+   * Flips the card, by changing the flip state, and adds the card to the flipped indexes array
+   */
+  const flip = () => {
+    setFlipped(!flipped);
+    props.setFlippedCount(props.flippedCount + 1);
+    const newIndexes = [...props.flippedIndexes];
+    newIndexes.push(props.id);
+    props.setFlippedIndexes(newIndexes);
   };
 
   return (
