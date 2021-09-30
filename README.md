@@ -20,6 +20,8 @@
 
 A simple memory game made with ReactJS.
 
+You can try the game at [react-memory.netlify.app](https://react-memory.netlify.app).
+
 ### Memory game rules
 
 The board contains an even number of cards, every card has a pair. Initially all cards are hidden. The player has to find all the matching cards. If the player clicks on a card, it is flipped, if he clicks on a new card, it will be flipped too. If the two cards match, they will stay flipped, if they don't match, both cards will be flipped back to be hidden. The goal is to try and match all the cards, in the least possible tries.

@@ -19,7 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Update this `CHANGELOG`
-- Release on [netlify.com](https://www.netlify.com)
+- Release on [react-memory.netlify.app](https://react-memory.netlify.app)
 
 ## [0.1.4] - 2021-09-29 - Game logic finish
 
