@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
 
 import Header from './components/Header';
+import Hero from './components/Hero';
 import SettingsModal from './components/SettingsModal';
 
 function App() {
@@ -19,10 +20,23 @@ function App() {
 
         {difficulty === null ? (
           // if no difficulty is selected, show the main screen
-          <>not playing</>
+          <>
+            <img
+              alt=""
+              src={`${process.env.PUBLIC_URL}/images/wave.svg`}
+              className="img-fluid background-img"
+            />
+            <Hero showsettings={(e) => setSettingsModalShow(e)} />
+          </>
         ) : (
           // if a difficulty was selected, start the game
-          <>playing</>
+          <>
+            <img
+              alt=""
+              src={`${process.env.PUBLIC_URL}/images/wave-big.svg`}
+              className="img-fluid background-img"
+            />
+          </>
         )}
 
         <SettingsModal
