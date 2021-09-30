@@ -1,13 +1,23 @@
 import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
 
+import Game from './components/Game';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import SettingsModal from './components/SettingsModal';
+import WinningScreenModal from './components/WinningScreenModal';
 
+/**
+ * Main App file
+ *
+ * @param {null, int} difficulty serves two purpose, if null no game is being palyed, if integer, sets the number of pair of cards
+ * @param score stores the final score of the current game
+ */
 function App() {
   const [difficulty, setDifficulty] = useState(null);
+  const [score, setScore] = useState(0);
   const [settingsModalShow, setSettingsModalShow] = useState(false);
+  const [winningScreenShow, setWinningScreenShow] = useState(false);
 
   return (
     <div className="App">
@@ -36,6 +46,12 @@ function App() {
               src={`${process.env.PUBLIC_URL}/images/wave-big.svg`}
               className="img-fluid background-img"
             />
+            <Game
+              difficulty={difficulty}
+              setdifficulty={(e) => setDifficulty(e)}
+              setscore={(e) => setScore(e)}
+              showwinningscreen={(e) => setWinningScreenShow(e)}
+            />
           </>
         )}
 
@@ -43,6 +59,14 @@ function App() {
           show={settingsModalShow}
           onHide={() => setSettingsModalShow(false)}
           setdifficulty={(e) => setDifficulty(e)}
+        />
+
+        <WinningScreenModal
+          show={winningScreenShow}
+          onHide={() => setWinningScreenShow(false)}
+          showsettings={(e) => setSettingsModalShow(e)}
+          setdifficulty={(e) => setDifficulty(e)}
+          score={score}
         />
       </main>
 
