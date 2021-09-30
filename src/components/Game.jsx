@@ -9,6 +9,7 @@ import Card from './Card';
  * @param props.difficulty the number of pair of cards
  * @param props.setdifficulty function to reset the game
  * @param props.setscore an integer to hold the current game score
+ * @param props.showwinningscreen a function to summon the end game winnig screen
  *
  * @returns a game board
  */
@@ -58,6 +59,17 @@ const Game = (props) => {
     const shuffledCards = newCards.sort(() => Math.random() - 0.5);
     setCards(shuffledCards);
   }, [props.difficulty]);
+
+  /**
+   * Loads the high score from a locally stored json
+   */
+  useEffect(() => {
+    const json = localStorage.getItem('memorygamehighscore');
+    const savedScore = JSON.parse(json);
+    if (savedScore) {
+      setHighScore(savedScore);
+    }
+  }, []);
 
   /**
    * Checks if the game is finished, and if it is show the winnig screen
@@ -115,11 +127,11 @@ const Game = (props) => {
       <div className="mb-5 d-flex justify-content-between">
         <div>
           <span className="text-subtle text-small">Current tries:</span>{' '}
-          <span className="text-white">4</span>
+          <span className="text-white">{Math.floor(flippedCount / 2)}</span>
         </div>
         <div className="d-flex flex-column align-items-center">
           <span className="text-subtle text-small">Best:</span>{' '}
-          <span className="text-white text-large">2</span>
+          <span className="text-white text-large">{highScore}</span>
         </div>
         <div className="">
           <Button
