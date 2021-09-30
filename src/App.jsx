@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { useSpring, animated } from 'react-spring';
+import React, { useState } from 'react';
 
 import { Button, Navbar, Container } from 'react-bootstrap';
 
@@ -8,17 +7,11 @@ import './App.css';
 
 function App() {
   const [difficulty, setDifficulty] = useState(null);
-  const [highScore, setHighScore] = useState(0);
-  const [currentScore, setCurrentScore] = useState(0);
   const [modalShow, setModalShow] = useState(false);
 
   const getDifficulty = (data) => {
     setDifficulty(data);
   };
-
-  useEffect(() => {
-    // load
-  }, []);
 
   return (
     <div className="App">
