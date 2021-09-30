@@ -70,3 +70,14 @@ body {
 .card:hover {
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1) !important;
 }
+
+/* fix backgorund img size for the cards */
+.card-img {
+  position: absolute;
+  max-width: 124px;
+  max-height: 124px;
+  width: 124px;
+  height: 124px;
+  cursor: pointer;
+  background-size: cover;
+}

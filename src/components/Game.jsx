@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Container } from 'react-bootstrap';
 
+import Card from './Card';
+
 /**
  * The Game logic file
  *
@@ -108,7 +110,15 @@ const Game = (props) => {
         {cards.map((card, index) => (
           // Create a div for each card and map a Card component to each
           <div className={'card shadow-sm p-3'} key={index}>
-            card
+            <Card
+              id={index}
+              img={card.img}
+              cards={cards}
+              flippedCount={flippedCount}
+              setFlippedCount={setFlippedCount}
+              flippedIndexes={flippedIndexes}
+              setFlippedIndexes={setFlippedIndexes}
+            />
           </div>
         ))}
       </div>
