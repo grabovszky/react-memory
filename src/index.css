@@ -81,3 +81,34 @@ body {
   cursor: pointer;
   background-size: cover;
 }
+
+@media only screen and (max-width: 800px) {
+  .card {
+    width: 120px;
+    height: 120px;
+    margin: 5px;
+  }
+
+  .card-img {
+    max-width: 86px;
+    max-height: 86px;
+    width: 86px;
+    height: 86px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .card {
+    padding: 0;
+    width: 90px;
+    height: 90px;
+    margin: 5px;
+  }
+
+  .card-img {
+    max-width: 60px;
+    max-height: 60px;
+    width: 60px;
+    height: 60px;
+  }
+}
