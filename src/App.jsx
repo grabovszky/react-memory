@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
 
+import Game from './components/Game';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import SettingsModal from './components/SettingsModal';
 
 function App() {
   const [difficulty, setDifficulty] = useState(null);
+  const [score, setScore] = useState(0);
   const [settingsModalShow, setSettingsModalShow] = useState(false);
 
   return (
@@ -35,6 +37,11 @@ function App() {
               alt=""
               src={`${process.env.PUBLIC_URL}/images/wave-big.svg`}
               className="img-fluid background-img"
+            />
+            <Game
+              difficulty={difficulty}
+              setdifficulty={(e) => setDifficulty(e)}
+              setscore={(e) => setScore(e)}
             />
           </>
         )}
