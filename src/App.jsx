@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { Button, Navbar, Container } from 'react-bootstrap';
 
 import SettingsModal from './components/SettingsModal';
-import './App.css';
 
 function App() {
   const [difficulty, setDifficulty] = useState(null);
