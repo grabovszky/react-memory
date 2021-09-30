@@ -13,13 +13,12 @@
 - [License](#license)
 - [Changelog](#changelog)
 - [Code Style](#code-style)
-- [Documentation](#documentation)
 - [Contact](#contact)
 - [Acknowledgements](#acknowledgements)
 
 ## About The Project
 
-A simple, yet elegant memory card game made with ReactJS.
+A simple memory game made with ReactJS.
 
 ### Memory game rules
 
@@ -28,6 +27,7 @@ The board contains an even number of cards, every card has a pair. Initially all
 ### Built With
 
 - [React](https://reactjs.org)
+- [react-spring](https://react-spring.io/)
 - [Create React App](https://github.com/facebook/create-react-app)
 
 ## Getting Started
@@ -71,10 +71,6 @@ The project adheres to the guidelines defined below:
 - Project versioning uses [Semantic Versioning 2.0.0](https://semver.org/)
 - Commits use the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) style
 
-## Documentation
-
-//TODO
-
 ## Contact
 
 Kristóf Gábor - [gaborkristof.com](https://www.gaborkristof.com)
@@ -84,3 +80,5 @@ Kristóf Gábor - [gaborkristof.com](https://www.gaborkristof.com)
 - [Facebook](https://github.com/facebook) dev team for:
   - [React](https://github.com/facebook/react) (Licensed under [MIT](https://github.com/facebook/react/blob/main/LICENSE))
   - [Create React App](https://github.com/facebook/create-react-app) (Licensed under [MIT](https://github.com/facebook/create-react-app/blob/main/LICENSE))
+- [Poimandres](https://github.com/pmndrs) developer collective for:
+  - [react-spring](https://github.com/pmndrs/react-spring) (Licensed under [MIT](https://github.com/pmndrs/react-spring/blob/master/LICENSE))
