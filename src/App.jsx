@@ -16,6 +16,15 @@ function App() {
           setdifficulty={(e) => setDifficulty(e)}
           showsettings={(e) => setSettingsModalShow(e)}
         />
+
+        {difficulty === null ? (
+          // if no difficulty is selected, show the main screen
+          <>not playing</>
+        ) : (
+          // if a difficulty was selected, start the game
+          <>playing</>
+        )}
+
         <SettingsModal
           show={settingsModalShow}
           onHide={() => setSettingsModalShow(false)}
